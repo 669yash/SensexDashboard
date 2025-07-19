@@ -104,7 +104,7 @@ export default function TechnicalIndicators() {
                 <div>
                   <span className="text-xs text-slate-500">Support</span>
                   {supports.map((support: any, index: number) => (
-                    <p key={support.id} className={`font-semibold ${index === 0 ? 'text-danger' : 'text-slate-600'}`}>
+                    <p key={support.id || `support-${index}`} className={`font-semibold ${index === 0 ? 'text-danger' : 'text-slate-600'}`}>
                       {support.value?.toLocaleString()}
                     </p>
                   ))}
@@ -112,7 +112,7 @@ export default function TechnicalIndicators() {
                 <div>
                   <span className="text-xs text-slate-500">Resistance</span>
                   {resistances.map((resistance: any, index: number) => (
-                    <p key={resistance.id} className={`font-semibold ${index === 0 ? 'text-secondary' : 'text-slate-600'}`}>
+                    <p key={resistance.id || `resistance-${index}`} className={`font-semibold ${index === 0 ? 'text-secondary' : 'text-slate-600'}`}>
                       {resistance.value?.toLocaleString()}
                     </p>
                   ))}

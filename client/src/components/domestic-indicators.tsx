@@ -69,8 +69,8 @@ export default function DomesticIndicators() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {getIndicatorsByType("CPI").map((indicator: any) => (
-              <div key={indicator.id} className="flex justify-between items-center">
+            {getIndicatorsByType("CPI").map((indicator: any, index: number) => (
+              <div key={indicator.id || `cpi-${index}`} className="flex justify-between items-center">
                 <span className="text-sm text-slate-600">CPI (YoY)</span>
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold">{indicator.value}%</span>
@@ -78,8 +78,8 @@ export default function DomesticIndicators() {
                 </div>
               </div>
             ))}
-            {getIndicatorsByType("WPI").map((indicator: any) => (
-              <div key={indicator.id} className="flex justify-between items-center">
+            {getIndicatorsByType("WPI").map((indicator: any, index: number) => (
+              <div key={indicator.id || `wpi-${index}`} className="flex justify-between items-center">
                 <span className="text-sm text-slate-600">WPI (YoY)</span>
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold">{indicator.value}%</span>
@@ -110,8 +110,8 @@ export default function DomesticIndicators() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {getIndicatorsByType("GDP").map((indicator: any) => (
-              <div key={indicator.id} className="flex justify-between items-center">
+            {getIndicatorsByType("GDP").map((indicator: any, index: number) => (
+              <div key={indicator.id || `gdp-${index}`} className="flex justify-between items-center">
                 <span className="text-sm text-slate-600">Real GDP Growth</span>
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold text-secondary">{indicator.value}%</span>
@@ -149,8 +149,8 @@ export default function DomesticIndicators() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {getIndicatorsByType("IIP").map((indicator: any) => (
-              <div key={indicator.id} className="flex justify-between items-center">
+            {getIndicatorsByType("IIP").map((indicator: any, index: number) => (
+              <div key={indicator.id || `iip-${index}`} className="flex justify-between items-center">
                 <span className="text-sm text-slate-600">IIP (YoY)</span>
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold">{indicator.value}%</span>
@@ -188,8 +188,8 @@ export default function DomesticIndicators() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {getIndicatorsByType("Manufacturing PMI").map((indicator: any) => (
-              <div key={indicator.id} className="flex justify-between items-center">
+            {getIndicatorsByType("Manufacturing PMI").map((indicator: any, index: number) => (
+              <div key={indicator.id || `mfg-pmi-${index}`} className="flex justify-between items-center">
                 <span className="text-sm text-slate-600">Manufacturing PMI</span>
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold text-secondary">{indicator.value}</span>
@@ -197,8 +197,8 @@ export default function DomesticIndicators() {
                 </div>
               </div>
             ))}
-            {getIndicatorsByType("Services PMI").map((indicator: any) => (
-              <div key={indicator.id} className="flex justify-between items-center">
+            {getIndicatorsByType("Services PMI").map((indicator: any, index: number) => (
+              <div key={indicator.id || `srv-pmi-${index}`} className="flex justify-between items-center">
                 <span className="text-sm text-slate-600">Services PMI</span>
                 <div className="flex items-center space-x-2">
                   <span className="font-semibold text-secondary">{indicator.value}</span>

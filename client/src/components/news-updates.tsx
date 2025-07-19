@@ -126,8 +126,8 @@ export default function NewsUpdates() {
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
-          {news?.map((newsItem: any) => (
-            <div key={newsItem.id} className={`border-l-4 ${getCategoryColor(newsItem.category)} pl-4 py-2`}>
+          {news?.map((newsItem: any, index: number) => (
+            <div key={newsItem.id || `news-${index}`} className={`border-l-4 ${getCategoryColor(newsItem.category)} pl-4 py-2`}>
               <div className="flex justify-between items-start mb-1">
                 <h4 className="text-sm font-medium text-slate-900 hover:text-primary cursor-pointer">
                   {newsItem.url && newsItem.url !== '#' ? (
