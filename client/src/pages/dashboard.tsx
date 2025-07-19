@@ -6,6 +6,7 @@ import MonetaryPolicy from "@/components/monetary-policy";
 import GlobalFactors from "@/components/global-factors";
 import TechnicalIndicators from "@/components/technical-indicators";
 import NewsUpdates from "@/components/news-updates";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -50,20 +51,21 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <i className="fas fa-chart-line text-2xl text-primary"></i>
-              <h1 className="text-xl font-bold text-slate-900">Sensex Dashboard</h1>
+              <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100">Sensex Dashboard</h1>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-sm">
                 <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
-                <span className="text-slate-600">Live Data</span>
+                <span className="text-slate-600 dark:text-slate-300">Live Data</span>
               </div>
+              <ThemeToggle />
               <Button onClick={handleRefreshAll} className="bg-primary hover:bg-blue-700">
                 <RefreshCw className="mr-2 h-4 w-4" />
                 Refresh
